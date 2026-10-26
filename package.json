@@ -1,0 +1,15 @@
+{
+  "name": "computer-hub-preview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Independent static design preview for The Computer Hub",
+  "scripts": {
+    "build": "python scripts/build.py",
+    "start": "python scripts/serve.py",
+    "test": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "playwright": "^1.64.1"
+  }
+}

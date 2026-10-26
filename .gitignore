@@ -1,0 +1,11 @@
+node_modules/
+dist/
+assets/originals/
+docs/screenshots/
+docs/qa-results.json
+__pycache__/
+*.pyc
+*.zip
+.env
+.env.*
+.hermes/

@@ -1,0 +1,45 @@
+{
+  "name": "The Computer Hub",
+  "facebook": "https://www.facebook.com/TheComputerHub1/",
+  "phone": {"display": "(313) 451-9200", "e164": "+13134519200"},
+  "email": "info@thecomputerhub.net",
+  "website": "https://thecomputerhub.net/",
+  "address": {
+    "display": "22222 Van Born Road, Dearborn Heights, MI",
+    "directions": "https://www.google.com/maps/search/?api=1&query=22222%20Van%20Born%20Road%2C%20Dearborn%20Heights%2C%20MI"
+  },
+  "hours": [],
+  "hero": {
+    "eyebrow": "Dearborn Heights, Michigan",
+    "heading": "Your local\ntech shop.",
+    "description": "Connect with The Computer Hub in Dearborn Heights. Ask about current products, service options, or a specific item before you visit."
+  },
+  "offerings": [
+    {"title": "Computer store", "description": "Looking for something specific? Ask the shop about current products and availability."},
+    {"title": "Computer repair service", "description": "Describe your device and the issue to ask about service options before visiting."}
+  ],
+  "about": null,
+  "promo": {
+    "eyebrow": "LET’S TALK ABOUT YOUR COMPUTER",
+    "heading": "Slow computer?\nBroken screen?",
+    "description": "Tell The Computer Hub what’s happening with your device. Call to ask about repair options and what to bring before you visit.",
+    "cta": "Call the Shop",
+    "image": {
+      "webp": "assets/typing-reference.webp",
+      "fallback": "assets/typing-reference.jpg",
+      "width": 620,
+      "height": 770,
+      "alt": "Illustrative typing photo from the supplied promotional graphic; not a photograph of shop staff.",
+      "caption": "Illustrative image from the supplied promotional graphic."
+    }
+  },
+  "owner_note": {
+    "heading": "A note for the owner",
+    "description": "This is a working demo, not a final design. Colors, photos, and sections can be tailored to your shop while keeping the layout accessible and mobile-friendly."
+  },
+  "photos": [],
+  "contact": {
+    "heading": "A question is a\ngood place to start.",
+    "description": "Tell the shop what you’re looking for, or ask about a specific item before making a trip."
+  }
+}

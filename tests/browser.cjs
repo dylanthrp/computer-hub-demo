@@ -30,6 +30,13 @@ const output=path.join(ROOT,'docs','screenshots');fs.mkdirSync(output,{recursive
    const photo=page.locator('.repair-photo img');assert.match(await photo.getAttribute('alt'),/Illustrative typing photo/);
    assert(await photo.evaluate(i=>i.complete&&i.naturalWidth===620&&i.naturalHeight===770));
    assert(await page.locator('#owner-note').isVisible());
+   assert.equal(await page.locator('.contact-intro .hours-table tr').count(),7);
+   assert.deepEqual(await page.locator('.hours-table th').allTextContents(),content.hours.map(h=>h.day));
+   assert.deepEqual(await page.locator('.hours-table td').allTextContents(),content.hours.map(h=>h.time));
+   const hoursBox=await page.locator('.contact-intro .hours').boundingBox(),detailsBox=await page.locator('.contact-details').boundingBox(),introBox=await page.locator('.contact-intro>p:not(.eyebrow)').boundingBox();
+   assert(hoursBox.y>=introBox.y+introBox.height,'hours below contact introduction');
+   if(width>800)assert(hoursBox.x+hoursBox.width<=detailsBox.x,'hours in desktop left column');
+   else assert(hoursBox.y+hoursBox.height<=detailsBox.y,'hours stack above mobile contacts');
    await page.addScriptTag({content:axe.source});const a=await page.evaluate(async()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}}));
    assert.deepEqual(a.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)})),[],`axe at ${width}`);
    const small=await page.locator('a,button').evaluateAll(es=>es.filter(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&e.className!=='skip-link'&&(r.width<44||r.height<44)}).map(e=>({text:e.textContent.trim(),w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height})));assert.deepEqual(small,[],`targets ${width}`);

@@ -15,7 +15,11 @@ class BuildTests(unittest.TestCase):
         self.assertIn('href="https://thecomputerhub.net/"',page)
         self.assertIn('Computer repair service',page)
         self.assertIn('Computer store',page)
-        self.assertEqual(self.data['hours'],[])
+        self.assertEqual(len(self.data['hours']),7)
+        expected={'Sunday':'10 AM–5 PM','Monday':'9 AM–7 PM','Tuesday':'9 AM–7 PM','Wednesday':'9 AM–7 PM','Thursday':'9 AM–7 PM','Friday':'9 AM–7 PM','Saturday':'10 AM–5 PM'}
+        self.assertEqual({h['day']:h['time'] for h in self.data['hours']},expected)
+        self.assertLess(page.index('id="hours-title"'),page.index('class="contact-details"'))
+        self.assertIn('class="contact-intro"',page)
         self.assertNotIn('id="about"',page)
         self.assertIn('noindex,nofollow',page)
     def test_approved_future_sections(self):

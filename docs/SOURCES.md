@@ -60,7 +60,11 @@ The separate owner-facing note identifies this as a working demo, not a final de
 
 ## Current consolidated checklist before an official business launch
 
-1. Confirm current weekly opening hours; the screenshot's “Open now” is not a schedule.
+1. Reconfirm the supplied weekly schedule with the owner before an official launch; see the hours addendum below.
 2. Obtain owner approval of copy, design and the screenshot-supplied contact details. Confirm any more specific product/repair capabilities before adding them.
 3. Confirm permission for logo and promotional photo use; replace illustrations with owner-approved shop/product photos if desired. See PHOTO-CROP.md for the preserved original and crop provenance.
 4. Obtain explicit owner/domain/hosting authority before replacing an official website. Review production metadata and indexing deliberately; retain preview disclosure/noindex for this showcase.
+
+## Weekly hours supplied — 2026-10-26
+
+The user supplied a separate weekly-hours screenshot (`composer_2026-10-26_23-19-37-689_ad1178.png`) showing Monday–Friday 9 AM–7 PM and Saturday–Sunday 10 AM–5 PM. This supersedes the earlier unknown-hours status. All seven days are now stored in `content.json` and rendered beneath the left-hand Visit & Contact introduction, matching the placement screenshot. No live open/closed status or holiday hours are inferred.

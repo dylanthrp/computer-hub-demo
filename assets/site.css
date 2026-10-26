@@ -7,4 +7,12 @@
 @media(max-width:380px){.wrap{width:calc(100% - 36px)}.hero-actions{gap:16px}.hero-description{font-size:17px}.inquiry-panel{padding:24px}.contact-row{grid-template-columns:1fr;gap:2px}.contact-layout h2{font-size:36px}.offering h3{font-size:25px}}
 .repair-promo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,88px);align-items:center;padding-block:0 88px}.repair-photo{margin:0;min-width:0}.repair-photo picture{display:block;border-radius:var(--radius);overflow:hidden;background:#e8e4dd}.repair-photo img{display:block;width:100%;aspect-ratio:620/770;object-fit:cover}.repair-photo figcaption{font-size:12px;line-height:1.5;color:var(--muted);padding-top:12px}.repair-copy h2{font-size:clamp(38px,4.4vw,64px);letter-spacing:-.045em;margin-bottom:24px}.repair-copy>p:not(.eyebrow){max-width:470px;color:var(--muted);margin-bottom:30px}.owner-note{margin-block:36px;padding:24px 28px;border:1px solid var(--line);border-left:3px solid var(--red);border-radius:4px}.owner-note h2{font-size:16px;letter-spacing:0;line-height:1.4;margin-bottom:8px}.owner-note p{font-size:14px;color:var(--muted);max-width:850px;margin-bottom:0}
 @media(max-width:800px){.repair-promo{grid-template-columns:1fr;gap:28px;padding-bottom:56px}.repair-copy{grid-row:1}.repair-photo{max-width:480px;width:100%}.repair-copy h2{font-size:clamp(38px,7vw,56px)}.owner-note{padding:20px}.repair-copy .eyebrow{font-size:11px;letter-spacing:.1em}}
+.contact-intro>p:not(.eyebrow){max-width:440px;color:var(--muted)}
+.contact-intro .hours{margin-top:32px;padding:24px 0 0;border-top:1px solid #c3bfb8;max-width:440px}
+.contact-intro .hours h3{font-size:18px;line-height:1.4;margin:0 0 14px;letter-spacing:-.015em}
+.hours-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
+.hours-table th,.hours-table td{padding:9px 0;border-bottom:1px solid #d0ccc5}
+.hours-table th{text-align:left;font-weight:600;padding-right:16px}
+.hours-table td{text-align:right;color:var(--muted);white-space:nowrap}
+.hours-table tr:last-child th,.hours-table tr:last-child td{border-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}

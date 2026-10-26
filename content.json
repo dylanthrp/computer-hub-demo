@@ -8,7 +8,15 @@
     "display": "22222 Van Born Road, Dearborn Heights, MI",
     "directions": "https://www.google.com/maps/search/?api=1&query=22222%20Van%20Born%20Road%2C%20Dearborn%20Heights%2C%20MI"
   },
-  "hours": [],
+  "hours": [
+    {"day": "Sunday", "time": "10 AM–5 PM"},
+    {"day": "Monday", "time": "9 AM–7 PM"},
+    {"day": "Tuesday", "time": "9 AM–7 PM"},
+    {"day": "Wednesday", "time": "9 AM–7 PM"},
+    {"day": "Thursday", "time": "9 AM–7 PM"},
+    {"day": "Friday", "time": "9 AM–7 PM"},
+    {"day": "Saturday", "time": "10 AM–5 PM"}
+  ],
   "hero": {
     "eyebrow": "Dearborn Heights, Michigan",
     "heading": "Your local\ntech shop.",

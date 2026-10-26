@@ -45,8 +45,9 @@ def render(data):
     if data.get('website'): contact_rows += f'<div class="contact-row"><span>Website</span><a href="{e(data["website"])}">{e(data["website"].removeprefix("https://").rstrip("/"))} {arrow}</a></div>'
     if data.get('address'):
         a=data['address'];contact_rows += f'<div class="contact-row"><span>Visit</span><a href="{e(a["directions"])}">{e(a["display"])} {arrow}</a></div>'
+    hours = ''
     if data.get('hours'):
-        contact_rows += '<div class="hours"><h3>Opening hours</h3><dl>'+''.join('<div><dt>'+e(h['day'])+'</dt><dd>'+e(h['time'])+'</dd></div>' for h in data['hours'])+'</dl></div>'
+        hours = '<section class="hours" aria-labelledby="hours-title"><h3 id="hours-title">Hours of service</h3><table class="hours-table" aria-labelledby="hours-title"><tbody>'+''.join('<tr><th scope="row">'+e(h['day'])+'</th><td>'+e(h['time'])+'</td></tr>' for h in data['hours'])+'</tbody></table></section>'
     contact_rows += f'<div class="contact-row"><span>Connect</span><a href="{facebook}">The Computer Hub on Facebook {arrow}</a></div>'
     hero=data['hero'];contact=data['contact']
     return f'''<!doctype html>
@@ -62,7 +63,7 @@ def render(data):
 <div class="preview-note">Independent design preview · Not the official business website.</div>
 <header class="site-header wrap"><a class="brand" href="./" aria-label="{name}, home"><picture><source srcset="assets/logo.webp" type="image/webp"><img src="assets/logo.jpg" width="900" height="375" alt="{name}"></picture></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">+</span></button><nav id="main-nav" aria-label="Main navigation">{nav}<a class="nav-contact" href="{e(primary_url)}">{primary_label} {arrow}</a></nav></header>
 <main id="main" tabindex="-1"><section class="hero wrap"><div class="hero-copy"><p class="eyebrow"><span class="brand-dash" aria-hidden="true"></span>{e(hero['eyebrow'])}</p><h1>{lines(hero['heading'])}</h1><p class="hero-description">{e(hero['description'])}</p><div class="hero-actions"><a class="button" href="{e(primary_url)}">{primary_label} {arrow}</a><a class="text-link" href="#contact">Contact details <span aria-hidden="true">↓</span></a></div></div>{visual}</section>{promo}{offerings}{about}
-<section class="contact-section" id="contact"><div class="wrap contact-layout"><div><p class="eyebrow">VISIT &amp; CONTACT</p><h2>{lines(contact['heading'])}</h2><p>{e(contact['description'])}</p></div><div class="contact-details">{contact_rows}</div></div></section>
+<section class="contact-section" id="contact"><div class="wrap contact-layout"><div class="contact-intro"><p class="eyebrow">VISIT &amp; CONTACT</p><h2>{lines(contact['heading'])}</h2><p>{e(contact['description'])}</p>{hours}</div><div class="contact-details">{contact_rows}</div></div></section>
 </main>{owner_note}<footer class="wrap"><a class="footer-name" href="./">{name}</a><span>Keep in touch.</span><a href="{facebook}">Facebook {arrow}</a><a href="#main">Back to top ↑</a></footer>
 </body></html>'''
 
